@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+<body>
+
+    <!-- dynamic content using ejs-->
+    <% const name = 'mario' %>
+
+    <!-- after ejs open, we use - instead of  = , because = just puts the value where as - renders it as html -->
+    <%- include('../partials/nav.ejs') %>
+    <!-- to return single value to the ui use = befor the start as start of ejs tag -->
+    <h1>
+        Welcome <%= name %>! to Our blogging site!
+    </h1>
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+    <% if(blogs.length > 0 ) { %>
+        <% blogs.forEach(blog => { %>
+            <a class="single" href="/blogs/<%= blog._id %>">
+                <h3> <%= blog.title %> </h3>
+                <p> <%= blog.snippet %> </p>
+            </a>
+        <% }) %>
+        <!-- put else after } brace only never put it seperate -->
+        <% } else { %>    
+        <h3> No Blogs are created, feel free to create some :) </h3>
+    <% } %>
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>
