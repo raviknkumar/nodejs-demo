@@ -9,9 +9,9 @@ const blogRoutes = require('./routes/blogRoutes');
 // connect to mongo db
 // can use mongo db api for connecting with database
 // but will be using mongoose for managing mongo db
-let userName = 'ravi'
-let password = '1234'
-let dbname = 'blog-db'
+let userName = 'name'
+let password = 'password'
+let dbname = 'db'
 const dbUrl = `mongodb+srv://${userName}:${password}@cluster0.vusgb.mongodb.net/${dbname}?retryWrites=true&w=majority`
 
 // we don;t want to listen until connection to db is established
